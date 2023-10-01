@@ -16,7 +16,14 @@ jobs:
       - name: Build and tag Docker image
         run: |
           docker build -t flaskapp:latest -f DockerFile .
-        
+
+      - name: Login to Docker Hub
+        run: |
+          echo "dckr_pat_GD1dfQ913DHaKorPg-AfS8VHNpM" | docker login --username alishbalaeeq2001 --password-stdin
+        env:
+          DOCKERHUB_USERNAME: alishbalaeeq2001
+          DOCKERHUB_ACCESS_TOKEN: dckr_pat_GD1dfQ913DHaKorPg-AfS8VHNpM
+          
       - name: Push Docker image to Docker Hub
         run: |
           docker push alishbalaeeq2001/flask_docker:latest
