@@ -18,7 +18,7 @@ jobs:
           docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
         env:
           DOCKERHUB_USERNAME: ${{ secrets.alishbalaeeq2001 }}
-          DOCKERHUB_PASSWORD: ${{ secrets.manologelato*/+- }}
+          DOCKERHUB_PASSWORD: "${{ secrets.manologelato*/+- }}"
 
       - name: Build and tag Docker image
         run: |
