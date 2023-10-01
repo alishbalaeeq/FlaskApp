@@ -23,11 +23,11 @@ def index():
         
         # Determine sentiment based on compound score
         if sentiment_scores['compound'] >= 0.05:
-            sentiment = 'Positive'
+            sentiment = 'Positive Sentiment'
         elif sentiment_scores['compound'] <= -0.05:
-            sentiment = 'Negative'
+            sentiment = 'Negative Sentiment'
         else:
-            sentiment = 'Neutral'
+            sentiment = 'Neutral Sentiment'
         
         return render_template('index.html', result=user_input, sentiment=sentiment)
     
