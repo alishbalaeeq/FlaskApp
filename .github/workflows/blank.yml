@@ -15,7 +15,7 @@ jobs:
 
       - name: Build and tag Docker image
         run: |
-          docker build -t flaskapp:latest -f Dockerfile .
+          docker build -t flaskapp:latest -f DockerFile .
         
       - name: Push Docker image to Docker Hub
         run: |
