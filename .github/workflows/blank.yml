@@ -1,0 +1,31 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches:
+      - main 
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Login to Docker Hub
+        run: |
+          docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.alishbalaeeq2001 }}
+          DOCKERHUB_PASSWORD: ${{ secrets.manologelato*/+- }}
+
+      - name: Build and tag Docker image
+        run: |
+          docker build -t flaskapp:latest .
+        working-directory: ./FlaskApp
+
+      - name: Push Docker image to Docker Hub
+        run: |
+          docker push alishbalaeeq2001/flask_docker:firstrepo
+        working-directory: ./FlaskApp
