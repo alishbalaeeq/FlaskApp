@@ -15,10 +15,8 @@ jobs:
 
       - name: Build and tag Docker image
         run: |
-          docker build -t flaskapp:latest .
-        working-directory: .
+          docker build -t flaskapp:latest -f Dockerfile .
         
       - name: Push Docker image to Docker Hub
         run: |
           docker push alishbalaeeq2001/flask_docker:firstrepo
-        working-directory: .
