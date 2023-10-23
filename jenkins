@@ -1,12 +1,11 @@
 pipeline {
-    def function_call =  load 'functions.groovy'
-
     agent any
 
     stages {
         stage('checkout') {
             steps {
                 script {
+                    def function_call =  load 'functions.groovy'
                     function_call.checkout()
                 }
             }
@@ -15,6 +14,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
+                    def function_call =  load 'functions.groovy'
                     function_call.build()
                 }
             }
@@ -23,6 +23,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
+                    def function_call =  load 'functions.groovy'
                     def SERVER = "production"
                     function_call.deploy(SERVER)
                 }
