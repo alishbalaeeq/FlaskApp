@@ -1,0 +1,22 @@
+pipeline {
+  agent any
+    stages {
+      stage('checkout') {
+        steps {
+          git branch:'master', url:'https://github.com/alishbalaeeq/FlaskApp.git'
+        }
+      }
+      stage('Build') {
+        steps {
+          echo 'Builing!'
+          bat 'pip install -r requirements.txt'
+        }
+      }
+
+      stage('Deploy'){
+        steps{
+          echo 'Deploying'
+        }
+      }
+    }
+}
