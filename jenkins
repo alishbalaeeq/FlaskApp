@@ -1,6 +1,7 @@
 pipeline {
-    agent any
     def function_call =  load 'functions.groovy'
+
+    agent any
 
     stages {
         stage('checkout') {
