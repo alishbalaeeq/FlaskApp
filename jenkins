@@ -25,7 +25,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    def data =  load 'example.groovy'
+                    def data =  load 'functions.groovy'
                     def SERVER = "PROD"
                     data.deploy(SERVER)
                 }
