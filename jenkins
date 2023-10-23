@@ -1,26 +1,29 @@
 pipeline {
     agent any
+    def function_call =  load 'functions.groovy'
 
     stages {
         stage('checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/alishbalaeeq/FlaskApp.git'
+                script {
+                    function_call.checkout()
+                }
             }
         }
         
         stage('Build') {
             steps {
-                echo 'Building'
-                bat 'pip3 install -r requirements.txt'
+                script {
+                    function_call.build()
+                }
             }
         }
         
         stage('Deploy') {
             steps {
                 script {
-                    def data =  load 'functions.groovy'
-                    def SERVER = "PROD"
-                    data.deploy(SERVER)
+                    def SERVER = "production"
+                    function_call.deploy(SERVER)
                 }
             }
         }
