@@ -3,7 +3,7 @@ pipeline {
     stages {
       stage('checkout') {
         steps {
-          git branch:'master', url:'https://github.com/alishbalaeeq/FlaskApp.git'
+          git branch:'main', url:'https://github.com/alishbalaeeq/FlaskApp.git'
         }
       }
       stage('Build') {
