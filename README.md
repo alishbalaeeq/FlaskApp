@@ -29,16 +29,21 @@ Before you start, ensure you have the following installed:
 
 2. Create a virtual environment and activate it (recommended):
 
-  python -m venv venv
-  source venv/bin/activate
+   ```bash
+   python -m venv venv
+   source venv/bin/activate
 
 3. Install the required Python packages:
 
-  pip install -r requirements.txt
+   ```bash
+   pip install -r requirements.txt
 
 ### Usage
 1. Run the Flask application:
+
+   ```bash
    python flask_app.py
+   
 2. Open a web browser and navigate to http://localhost:5000 to access the sentiment analysis tool.
 3. Enter text in the provided input field, and the application will analyze its sentiment and display the result.
 
@@ -46,8 +51,9 @@ Before you start, ensure you have the following installed:
 
 This repository includes a Dockerfile that allows you to containerize the Flask application. To build and run the Docker container, use the following commands:
 
-  docker build -t your-image-name .
-  docker run -p 8080:5000 your-image-name
+   ```bash
+   docker build -t your-image-name .
+   docker run -p 8080:5000 your-image-name
 
 The application will be accessible at http://localhost:8080.
 
