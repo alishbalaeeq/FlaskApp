@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask Input Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url("{{ url_for('static', filename='sentiment.jpg') }}");
+            background-size: cover;
+        }
+        h1 {
+            color: #0051a9;
+        }
+        form {
+            margin: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin: 5px;
+        }
+        input[type="submit"] {
+            background-color: #0051a9;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        h2 {
+            color: #007BFF;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Text Sentiment Analysis</h1>
+    <form method="POST">
+        <input type="text" name="user_input" placeholder="Enter text" required>
+        <input type="submit" value="Submit">
+    </form>
+    {% if result %}
+    <h2>Result:</h2>
+    <p><b>{{ result }}</b></p>
+    <h2>Sentiment:</h2>
+    <p><b>{{ sentiment }}</b></p>
+    {% endif %}
+</body>
+</html>
