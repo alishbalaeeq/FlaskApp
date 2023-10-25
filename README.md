@@ -51,7 +51,6 @@ Before you start, ensure you have the following installed:
 
 This repository includes a Dockerfile that allows you to containerize the Flask application. To build and run the Docker container, use the following commands:
 
-   ```bash
    docker build -t your-image-name .
    docker run -p 8080:5000 your-image-name
 
